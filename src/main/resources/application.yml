@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hsbc-transaction
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  data:
+    jdbc:
+      dialect: h2
+  h2:
+    console:
+      enabled: false
+
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  port: 8000
+
+uuid:
+  # workerId可以根据k8s中的pod名，以及数据库；可以实现自动维护
+  workerId: 1
